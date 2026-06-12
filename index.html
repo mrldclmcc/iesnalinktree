@@ -179,7 +179,7 @@
       background-color: var(--bg-card-hover);
     }
     .card:hover::before, .card:focus-visible::before { width: 4px; }
-    .card:active { transform: scale(.975); transition-duration: .08s; }
+    .card:active { transform: scale(.985) translateY(1px); transition-duration: .05s; }
     .card:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
 
     .card-icon {
@@ -474,6 +474,7 @@
   };
 
   document.getElementById('saveContactBtn').addEventListener('click', function () {
+    if (navigator.vibrate) navigator.vibrate(8);
     var lines = [
       'BEGIN:VCARD',
       'VERSION:3.0',
