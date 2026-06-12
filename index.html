@@ -478,7 +478,7 @@
       'BEGIN:VCARD',
       'VERSION:3.0',
       'FN:' + CONTACT_INFO.fullName,
-      'N:' + CONTACT_INFO.org + ';' + CONTACT_INFO.org + ';;;',
+      'N:' + CONTACT_INFO.fullName.split(' ').reverse().join(';') + ';;;;',
       'TITLE:' + CONTACT_INFO.title,
       'ORG:' + CONTACT_INFO.org,
       'TEL;TYPE=WORK,VOICE:' + CONTACT_INFO.phone,
@@ -500,7 +500,7 @@
     var url  = URL.createObjectURL(blob);
     var a    = document.createElement('a');
     a.href     = url;
-    a.download = 'tri-trade-solar workforce.vcf';
+    a.download = 'tri-trade-solar.vcf';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
